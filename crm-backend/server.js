@@ -10,7 +10,7 @@ import campaignRoutes from "./routes/campaignRoutes.js";
 const app = express();
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: ["http://localhost:5173", "https://crm-platform-eta.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
