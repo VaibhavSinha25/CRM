@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const API_BASE = "http://localhost:3000/api/customers";
+const API_BASE = "https://crm-ompo.onrender.com/api/customers";
 
 function CustomersPage() {
   const [customers, setCustomers] = useState([]);

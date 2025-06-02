@@ -31,7 +31,7 @@ export default function SegmentBuilder() {
   const handlePreview = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/segments/preview",
+        "https://crm-ompo.onrender.com/api/segments/preview",
         {
           rules,
           combineWith,

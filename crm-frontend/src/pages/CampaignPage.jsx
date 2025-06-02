@@ -10,7 +10,9 @@ export default function CampaignPage() {
   useEffect(() => {
     const fetchSegments = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3000/api/segments");
+        const { data } = await axios.get(
+          "https://crm-ompo.onrender.com/api/segments"
+        );
         setSegments(data);
       } catch (err) {
         console.error("Error fetching segments:", err);
@@ -21,10 +23,13 @@ export default function CampaignPage() {
 
   const sendCampaign = async () => {
     try {
-      const { data } = await axios.post("http://localhost:3000/api/campaigns", {
-        segmentId,
-        message,
-      });
+      const { data } = await axios.post(
+        "https://crm-ompo.onrender.com/api/campaigns",
+        {
+          segmentId,
+          message,
+        }
+      );
       setResult(data);
     } catch (err) {
       console.error("Error sending campaign:", err);
