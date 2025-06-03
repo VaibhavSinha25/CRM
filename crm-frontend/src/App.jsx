@@ -3,13 +3,11 @@ import SegmentBuilder from "./pages/SegmentBuilder";
 import CampaignPage from "./pages/CampaignPage";
 import { AuthProvider, useAuth } from "./Context/AuthContext";
 import { GoogleOAuthProvider } from "@react-oauth/google";
-import LoginButton from "./components/LoginButton";
-import LogoutButton from "./components/LogoutButton"; // Import LogoutButton
 import HomePage from "./pages/HomePage";
 import CustomersPage from "./pages/CustomersPage";
 
 const PrivateRoute = ({ element }) => {
-  const { token, user } = useAuth();
+  const { token } = useAuth();
   return token ? (
     element
   ) : (

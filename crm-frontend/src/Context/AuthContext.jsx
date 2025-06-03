@@ -19,7 +19,6 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  // Enhanced setters that also save to localStorage
   const updateToken = (newToken) => {
     setToken(newToken);
     if (newToken) {
@@ -38,7 +37,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Add logout function
+  //  logout function
   const logout = () => {
     setUser(null);
     setToken(null);

@@ -46,13 +46,16 @@ export default function SegmentBuilder() {
 
   const handleSave = async () => {
     try {
-      const { data } = await axios.post("http://localhost:3000/api/segments", {
-        name: segmentName,
-        ruleGroup: {
-          rules,
-          combineWith,
-        },
-      });
+      const { data } = await axios.post(
+        "https://crm-ompo.onrender.com/api/segments",
+        {
+          name: segmentName,
+          ruleGroup: {
+            rules,
+            combineWith,
+          },
+        }
+      );
       alert("Segment saved: " + data.name);
     } catch (err) {
       console.error(err);

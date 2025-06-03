@@ -10,6 +10,7 @@ function buildFilter(group) {
       conditions.push({ [rule.field]: { [mongoOp]: rule.value } });
     });
   }
+  // this will make query something like this -  {totalSpend: { $gte: 1000 }}
 
   if (Array.isArray(group.groups)) {
     group.groups.forEach((subgroup) => {
@@ -20,5 +21,7 @@ function buildFilter(group) {
   const key = group.combineWith === "OR" ? "$or" : "$and";
   return conditions.length === 1 ? conditions[0] : { [key]: conditions };
 }
+// this will make query something like this -
+//  { $or: [ { totalSpend: { $gte: 1000 } }, { visitCount: { $lt: 3 } } ] }
 
 export { buildFilter };
