@@ -57,6 +57,7 @@ CRM-Platform/
 │       ├── App.jsx
 │       ├── main.jsx
 │       └── index.css
+|   └──.env
 ```
 
 ---
@@ -75,9 +76,9 @@ cd crm-backend
 npm install
 ```
 
-- Create a `.env` file:
+- Create a `config.env` file:
 ```env
-MONGO_URL=your_mongodb_connection_string
+MONGODB_URL=your_mongodb_connection_string
 PORT=3000
 ```
 
@@ -91,6 +92,11 @@ node server.js
 cd ../crm-frontend
 npm install
 npm run dev
+```
+
+- Create a `.env` file:
+```env
+VITE_GOOGLE_CLIENT_ID=google_client_id
 ```
 
 ---
